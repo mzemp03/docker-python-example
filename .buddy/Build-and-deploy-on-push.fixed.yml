@@ -22,7 +22,9 @@
     shell_type: "sh"
   - action: "Build Docker image"
     type: "DOCKERFILE"
+    integration: "Docker_Hub"
     dockerfile_path: ""
+    docker_registry: "DOCKER_HUB"
     do_not_prune_images: true
   - action: "Push Docker image"
     type: "DOCKER_PUSH"
