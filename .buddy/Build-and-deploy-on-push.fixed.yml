@@ -24,3 +24,9 @@
     type: "DOCKERFILE"
     dockerfile_path: ""
     do_not_prune_images: true
+  - action: "Push Docker image"
+    type: "DOCKER_PUSH"
+    integration: "Docker_Hub"
+    docker_image_tag: "latest,${BUDDY_EXECUTION_REVISION_SHORT}"
+    docker_registry: "DOCKER_HUB"
+    repository: "mzemp03/buddy-image"
