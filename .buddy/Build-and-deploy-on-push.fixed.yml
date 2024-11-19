@@ -16,3 +16,7 @@
     cached_dirs:
     - "/root/.cache/pip"
     shell: "BASH"
+  - action: "Lint Dockerfile"
+    type: "DOCKERFILE_LINTER"
+    local_path: "Dockerfile"
+    shell_type: "sh"
