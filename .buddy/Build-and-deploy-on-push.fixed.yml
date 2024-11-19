@@ -30,3 +30,11 @@
     docker_image_tag: "latest,${BUDDY_EXECUTION_REVISION_SHORT}"
     docker_registry: "DOCKER_HUB"
     repository: "mzemp03/buddy-image"
+  - action: "Send email"
+    type: "EMAIL"
+    title: "$BUDDY_PIPELINE_NAME execution #$BUDDY_RUN_ID"
+    content: |-
+      Pipeline name: <a href="${execution.pipeline.url}">${execution.pipeline.name}</a>
+      Workspace: «a href="$(workspace.url)">$(workspace.name)</a>
+      Execution: #$BUDDY_EXECUTION_ID set#($action=execution.action_executions[O])$
+    recipients: "mzemp03@bluewin.ch"
